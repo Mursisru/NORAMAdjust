@@ -1,0 +1,50 @@
+# STATIC RULES
+
+## Project
+- **Name:** NORAM Adjust (NORAMAdjust)
+- **Game:** Nuclear Option (NO), Unity, Steam
+- **Stack:** C# / .NET 4.8, NOLoader (`INOMod`, no IL patches)
+- **mod id:** `com.at747.noramadjust`
+- **Deploy path:** `Nuclear Option\NOLoader\mods\NORAMAdjust\`
+- **Sibling dep:** `../NOLoader_Engine` (NOLoader.API, NOLoader.ModConfig)
+- **GitHub:** https://github.com/Mursisru/NORAMAdjust
+- **GITHUB local:** `C:\Users\at747\Desktop\GITHUB local\NORAMAdjust\`
+
+## Mod scope
+- Reserves **5300 MB** managed RAM (`byte[]` reservoir) at `MainMenu`
+- Active **always** (solo / host / dedicated client)
+- **Do not combine** with MpClientOpt `memory_budget=1` (~double reservation)
+
+## Code style
+- Guard clauses; `_camelCase` for private static fields
+- No GC alloc in hot paths (mod does not use tick API)
+- GitHub documentation — **English**
+
+## Deploy (assistant must run)
+1. Game **closed**
+2. `.\scripts\deploy-noram-adjust-mod.ps1` from repo root
+3. PatchTool **not required** (empty patches)
+4. **Commit/push** — only on explicit user request
+
+## Architecture
+| Class | Role |
+|-------|------|
+| `NoramAdjustMod` | INOMod entry; OnLoad/Unload |
+| `RamReservoir` | byte[] chunks, Apply/Release |
+| `NoramConfig` | mod.ini: enabled, memory_reservoir_mb, chunk_mb |
+
+---
+
+# DYNAMIC STATUS
+
+**Version:** v1.0.0 (`ModVersion = "1.0.0 Build DEV1P1"`)
+
+- Initial scaffold: standalone RAM budget mod, 5300 MB, MainMenu, no patches.
+
+---
+
+# SESSION HISTORY
+
+## Session 2026-06-26
+- Created NORAMAdjust from scratch: 5300 MB reservoir, always-on, deploy script.
+- Initial GitHub release v1.0.0.

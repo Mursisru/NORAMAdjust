@@ -1,0 +1,11 @@
+{
+  "id": "com.at747.noramadjust",
+  "guid": "b3c4d5e6f7a8490192837465a6b7c8d9",
+  "version": "1.0.0",
+  "name": "NORAM Adjust",
+  "assembly": "NOLoader.NORAMAdjust.dll",
+  "entryType": "NOLoader.NORAMAdjust.NoramAdjustMod",
+  "loadStage": "MainMenu",
+  "dependencies": [],
+  "patches": []
+}
