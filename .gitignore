@@ -1,0 +1,13 @@
+# Build artifacts
+bin/
+obj/
+BepInEx/**/bin/
+BepInEx/**/obj/
+
+# BepInEx build refs (run scripts/fetch-bepinex-libs.ps1)
+BepInEx/lib/*.dll
+
+# Deploy / local
+*.user
+Directory.Build.user.props
+artifacts/

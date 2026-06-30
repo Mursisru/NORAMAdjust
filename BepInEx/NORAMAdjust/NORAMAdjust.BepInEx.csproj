@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>NORAMAdjust.BepInEx</RootNamespace>
+    <AssemblyName>NORAMAdjust</AssemblyName>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <NuclearOptionRoot Condition="'$(NuclearOptionRoot)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Nuclear Option</NuclearOptionRoot>
+    <NOLoaderEngineRoot Condition="'$(NOLoaderEngineRoot)' == ''">$(MSBuildThisFileDirectory)..\..\..\NOLoader_Engine</NOLoaderEngineRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\NoramConfig.cs" Link="Shared\NoramConfig.cs" />
+    <Compile Include="..\..\src\RamReservoir.cs" Link="Shared\RamReservoir.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(NOLoaderEngineRoot)\DEV.SDK\shared\NOLoader.ModConfig\NOLoader.ModConfig.csproj" />
+    <Reference Include="0Harmony">
+      <HintPath>..\lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\lib\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(NuclearOptionRoot)\NuclearOption_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(NuclearOptionRoot)\NuclearOption_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

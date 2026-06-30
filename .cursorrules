@@ -1,0 +1,55 @@
+# STATIC RULES
+
+## Project
+- **Name:** NORAM Adjust (NORAMAdjust)
+- **Game:** Nuclear Option (NO), Unity, Steam
+- **Stack:** C# / .NET 4.8, NOLoader (`INOMod`) + BepInEx 5 plugin (shared core)
+- **mod id:** `com.at747.noramadjust`
+- **Solution:** `NORAMAdjust.sln`
+- **Deploy path (NOLoader):** `Nuclear Option\NOLoader\mods\NORAMAdjust\`
+- **Deploy path (BepInEx):** `Nuclear Option\BepInEx\plugins\com.at747.noramadjust\`
+- **Sibling dep:** `../NOLoader_Engine` (NOLoader.API, NOLoader.ModConfig)
+- **GitHub:** https://github.com/Mursisru/NORAMAdjust
+- **GITHUB local:** `C:\Users\at747\Desktop\GITHUB local\NORAMAdjust\`
+
+## Mod scope
+- Reserves **5300 MB** managed RAM (`byte[]` reservoir) at load
+- Active **always** (solo / host / dedicated client)
+- **Do not combine** with MpClientOpt `memory_budget=1` (~double reservation)
+- **Do not combine** NOLoader + BepInEx in same game install
+
+## Code style
+- Guard clauses; `_camelCase` for private static fields
+- No GC alloc in hot paths (mod does not use tick API)
+- GitHub documentation — **English**
+
+## Deploy (assistant)
+- NOLoader: `.\scripts\deploy-noram-adjust-mod.ps1` (game closed; no PatchTool)
+- BepInEx: `.\scripts\deploy-noram-adjust-bepinex.ps1`
+- **Commit/push** — only on explicit user request
+
+## Architecture
+| Class | Role |
+|-------|------|
+| `NoramAdjustMod` | INOMod entry; OnLoad/Unload |
+| `NoramAdjustPlugin` | BepInEx entry; Awake/OnDestroy |
+| `RamReservoir` | byte[] chunks, Apply/Release |
+| `NoramConfig` | mod.ini: enabled, memory_reservoir_mb, chunk_mb |
+
+See `docs/ARCHITECTURE.md`.
+
+---
+
+# DYNAMIC STATUS
+
+**Version:** v1.1.0 (`ModVersion = "1.1.0 Build DEV1P3"`)
+
+- Full docs + BepInEx + solution; release v1.1.0 (NOLoader + BepInEx zips).
+
+---
+
+# SESSION HISTORY
+
+## Session 2026-06-26
+- v1.0.0: initial NOLoader mod, GitHub release.
+- v1.1.0: BepInEx plugin, NORAMAdjust.sln, full English docs.
