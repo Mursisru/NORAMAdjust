@@ -17,20 +17,6 @@ Works for **solo**, **host**, and **dedicated client** — no session gate, no I
 
 ---
 
-## Table of contents
-
-- [What it does](#what-it-does)
-- [Requirements](#requirements)
-- [Install](#install)
-- [Configuration](#configuration)
-- [Compatibility](#compatibility)
-- [Repository layout](#repository-layout)
-- [Build from source](#build-from-source)
-- [Verification](#verification)
-- [License](#license)
-
----
-
 ## What it does
 
 At load time the mod reads `mod.ini` and allocates `byte[]` chunks (default **64 MB** each) until **5300 MB** total is reserved. The first and last byte of each chunk are touched so memory pages are committed. References are held until unload (game exit, or F11 hot-reload in NOLoader DEV_SDK).
@@ -60,6 +46,33 @@ Expected log line:
 > **Warning:** Do **not** install NOLoader and BepInEx in the same game folder — they conflict on `winhttp.dll`. Pick one loader.
 
 ---
+
+## Critical warnings
+
+> [!IMPORTANT]
+> **Pick one loader** - install either NOLoader **or** BepInEx 5; do not run both in the same game folder (`winhttp.dll` conflict).
+
+> [!WARNING]
+> **~5.3 GB free RAM required** - the mod pre-allocates a **5300 MB** managed memory reservoir; insufficient RAM may cause allocation failure or system paging.
+
+> [!WARNING]
+> **Do not combine with MpClientOpt `memory_budget=1`** - combined reservation can exceed **10 GB**; disable one RAM mod or set `memory_budget=0` in MpClientOpt.
+
+> [!NOTE]
+> **Zero IL patches** - no PatchTool step; works solo, host, and dedicated client.
+
+## Table of contents
+
+- [Critical warnings](#critical-warnings)
+- [What it does](#what-it-does)
+- [Requirements](#requirements)
+- [Install](#install)
+- [Configuration](#configuration)
+- [Compatibility](#compatibility)
+- [Repository layout](#repository-layout)
+- [Build from source](#build-from-source)
+- [Verification](#verification)
+- [License](#license)
 
 ## Install
 
