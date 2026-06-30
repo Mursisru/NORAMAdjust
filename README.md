@@ -12,15 +12,12 @@
 ---
 
 ## Critical warnings
-
 > [!IMPORTANT]
 > **Pick one loader** - install either NOLoader **or** BepInEx 5; do not run both in the same game folder (`winhttp.dll` conflict).
 
 > [!WARNING]
-> **~5.3 GB free RAM required** - the mod pre-allocates a **5300 MB** managed memory reservoir; insufficient RAM may cause allocation failure or system paging.
-
-> [!WARNING]
-> **Do not combine with MpClientOpt `memory_budget=1`** - combined reservation can exceed **10 GB**; disable one RAM mod or set `memory_budget=0` in MpClientOpt.
+> - **~5.3 GB free RAM required** - the mod pre-allocates a **5300 MB** managed memory reservoir; insufficient RAM may cause allocation failure or system paging.
+> - **Do not combine with MpClientOpt `memory_budget=1`** - combined reservation can exceed **10 GB**; disable one RAM mod or set `memory_budget=0` in MpClientOpt.
 
 > [!NOTE]
 > **Zero IL patches** - no PatchTool step; works solo, host, and dedicated client.
