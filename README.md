@@ -9,6 +9,22 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/Mursisru/NORAMAdjust/blob/main/LICENSE)
 [![.NET Framework 4.8](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4)](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
+---
+
+## Critical warnings
+
+> [!IMPORTANT]
+> **Pick one loader** - install either NOLoader **or** BepInEx 5; do not run both in the same game folder (`winhttp.dll` conflict).
+
+> [!WARNING]
+> **~5.3 GB free RAM required** - the mod pre-allocates a **5300 MB** managed memory reservoir; insufficient RAM may cause allocation failure or system paging.
+
+> [!WARNING]
+> **Do not combine with MpClientOpt `memory_budget=1`** - combined reservation can exceed **10 GB**; disable one RAM mod or set `memory_budget=0` in MpClientOpt.
+
+> [!NOTE]
+> **Zero IL patches** - no PatchTool step; works solo, host, and dedicated client.
+
 Pre-allocates a **5300 MB** managed RAM reservoir for **[Nuclear Option](https://store.steampowered.com/app/2168680/Nuclear_Option/)** to reduce GC stutter during gameplay.
 
 Shipped as a **[NOLoader](https://github.com/Mursisru/NOLoader)** mod (recommended) or a **BepInEx 5** plugin. Both builds share the same core (`RamReservoir`, `NoramConfig`) via linked source files in `NORAMAdjust.sln`.
@@ -43,23 +59,8 @@ Expected log line:
 | Free RAM | ~5.3 GB above game baseline | Same |
 | Build dep | Sibling repo `../NOLoader_Engine` | Same + `scripts/fetch-bepinex-libs.ps1` once |
 
-> **Warning:** Do **not** install NOLoader and BepInEx in the same game folder — they conflict on `winhttp.dll`. Pick one loader.
-
----
-
-## Critical warnings
-
-> [!IMPORTANT]
-> **Pick one loader** - install either NOLoader **or** BepInEx 5; do not run both in the same game folder (`winhttp.dll` conflict).
-
 > [!WARNING]
-> **~5.3 GB free RAM required** - the mod pre-allocates a **5300 MB** managed memory reservoir; insufficient RAM may cause allocation failure or system paging.
-
-> [!WARNING]
-> **Do not combine with MpClientOpt `memory_budget=1`** - combined reservation can exceed **10 GB**; disable one RAM mod or set `memory_budget=0` in MpClientOpt.
-
-> [!NOTE]
-> **Zero IL patches** - no PatchTool step; works solo, host, and dedicated client.
+> Do **not** install NOLoader and BepInEx in the same game folder — they conflict on `winhttp.dll`. Pick one loader.
 
 ## Table of contents
 
