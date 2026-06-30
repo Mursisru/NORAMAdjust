@@ -2,15 +2,12 @@
 
 # NORAM Adjust
 
-[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/) [![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/) [![Version](https://img.shields.io/badge/Version-1.1.0-green)]() [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
-
-
-[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
-[![NOLoader](https://img.shields.io/badge/loader-NOLoader-blue)](https://github.com/Mursisru/NOLoader)
-[![BepInEx](https://img.shields.io/badge/BepInEx-5.x-purple)](https://docs.bepinex.dev/)
-[![Nuclear Option](https://img.shields.io/badge/game-Nuclear%20Option-darkgreen)](https://store.steampowered.com/app/2168680/Nuclear_Option/)
-[![Version](https://img.shields.io/badge/release-v1.1.0-informational)](https://github.com/Mursisru/NORAMAdjust/releases/tag/v1.1.0)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/)
+[![NOLoader](https://img.shields.io/badge/Loader-NOLoader-purple)](https://github.com/Mursisru/NOLoader)
+[![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/)
+[![Version](https://img.shields.io/badge/Version-1.1.0-green)](https://github.com/Mursisru/NORAMAdjust/releases/tag/v1.1.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/Mursisru/NORAMAdjust/blob/main/LICENSE)
+[![.NET Framework 4.8](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4)](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 Pre-allocates a **5300 MB** managed RAM reservoir for **[Nuclear Option](https://store.steampowered.com/app/2168680/Nuclear_Option/)** to reduce GC stutter during gameplay.
 
@@ -67,7 +64,10 @@ Expected log line:
 ## Install
 
 > [!IMPORTANT]
-> **BepInEx 5 (x64) required** - install [BepInEx](https://docs.bepinex.dev/) before this mod.
+> **Pick one loader** — install either [NOLoader](https://github.com/Mursisru/NOLoader/releases) **or** [BepInEx 5](https://docs.bepinex.dev/) before this mod. Do not run both in the same game folder.
+
+> [!WARNING]
+> **~5.3 GB free RAM required** — the mod pre-allocates a managed memory reservoir. Insufficient RAM may cause allocation failure or system paging.
 
 ### Option A — release zip (recommended)
 
@@ -106,20 +106,10 @@ Close the game before copying files.
 **NOLoader** (requires NOLoader deployed first):
 
 ```powershell
-**Developer:** Mursisru
-
 # From NOLoader_Engine (one-time loader setup)
-
-[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/) [![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/) [![Version](https://img.shields.io/badge/Version-1.1.0-green)]() [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
-
 .\scripts\deploy-noloader.ps1 -Configuration DEV_SDK
 
-**Developer:** Mursisru
-
 # From this repo
-
-[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/) [![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/) [![Version](https://img.shields.io/badge/Version-1.1.0-green)]() [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
-
 .\scripts\deploy-noram-adjust-mod.ps1
 ```
 
