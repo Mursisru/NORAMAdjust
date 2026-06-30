@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0] - 2026-06-30
+
+### Changed
+- Documentation refresh: Developer header, badges, GitHub Alerts, Keywords, gitignore hygiene.
+
+
 All notable changes to this project are documented in this file.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/). Versions use [Semantic Versioning](https://semver.org/).

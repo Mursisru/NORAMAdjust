@@ -11,3 +11,12 @@ BepInEx/lib/*.dll
 *.user
 Directory.Build.user.props
 artifacts/
+.vs/
+libs/
+Directory.Build.props
+.cursorrules
+.cursor/
+ffmpeg.exe
+local_build_scripts/
+_buildroot/
+.debug/

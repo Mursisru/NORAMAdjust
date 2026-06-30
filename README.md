@@ -1,4 +1,9 @@
+**Developer:** Mursisru
+
 # NORAM Adjust
+
+[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/) [![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/) [![Version](https://img.shields.io/badge/Version-1.1.0-green)]() [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+
 
 [![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![NOLoader](https://img.shields.io/badge/loader-NOLoader-blue)](https://github.com/Mursisru/NOLoader)
@@ -61,6 +66,9 @@ Expected log line:
 
 ## Install
 
+> [!IMPORTANT]
+> **BepInEx 5 (x64) required** - install [BepInEx](https://docs.bepinex.dev/) before this mod.
+
 ### Option A — release zip (recommended)
 
 1. Open [Release v1.1.0](https://github.com/Mursisru/NORAMAdjust/releases/tag/v1.1.0).
@@ -98,10 +106,20 @@ Close the game before copying files.
 **NOLoader** (requires NOLoader deployed first):
 
 ```powershell
+**Developer:** Mursisru
+
 # From NOLoader_Engine (one-time loader setup)
+
+[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/) [![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/) [![Version](https://img.shields.io/badge/Version-1.1.0-green)]() [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+
 .\scripts\deploy-noloader.ps1 -Configuration DEV_SDK
 
+**Developer:** Mursisru
+
 # From this repo
+
+[![Nuclear Option](https://img.shields.io/badge/Game-Nuclear%20Option-blue)](https://store.steampowered.com/app/2168680/Nuclear_Option/) [![BepInEx 5](https://img.shields.io/badge/Loader-BepInEx%205-orange)](https://docs.bepinex.dev/) [![Version](https://img.shields.io/badge/Version-1.1.0-green)]() [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+
 .\scripts\deploy-noram-adjust-mod.ps1
 ```
 
@@ -226,3 +244,9 @@ Override game path via `Directory.Build.user.props`:
 ## License
 
 [MIT](LICENSE). Nuclear Option is property of its respective owners.
+
+---
+
+## Keywords
+
+nuclear-option, bepinex, harmony, mod, noramadjust, csharp, unity
